@@ -1,0 +1,14 @@
+.cat-gallery img {
+    height: 300px;
+    width: auto;
+    margin: 1%;
+
+}
+
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+
+}
