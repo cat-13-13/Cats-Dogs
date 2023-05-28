@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+
 class CatService {
 
     constructor() {
@@ -16,6 +17,7 @@ class CatService {
     getTenCats() {
         return this.api.get('/?limit=10')
     }
+
 }
 
 const catService = new CatService()

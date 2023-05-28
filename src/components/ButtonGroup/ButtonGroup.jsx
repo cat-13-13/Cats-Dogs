@@ -2,15 +2,15 @@ import './ButtonGroup.css'
 import { Button } from "react-bootstrap"
 
 
-const ButtonGroup = ({ loadCat, loadTenCats }) => {
+const ButtonGroup = ({ loadImage, loadImages, text1, text2 }) => {
 
     return (
 
         <div className="btn-container">
 
-            <Button variant="dark" onClick={loadCat}>I WANT TO SEE ANOTHER ONE!</Button>
+            <Button variant="dark" onClick={loadImage}>{text1}</Button>
 
-            <Button variant="dark" onClick={loadTenCats}>OKAY, I NEED TO SEE 10 OF THEM</Button>
+            <Button variant="dark" onClick={loadImages}>{text2}</Button>
 
         </div>
     )

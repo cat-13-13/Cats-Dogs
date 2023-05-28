@@ -10,7 +10,8 @@ div h1 span {
 }
 
 div img {
-    width: 500px;
+    width: auto;
+    height: 300px;
     margin: 20px 0;
     border-radius: 5px;
 }
@@ -20,8 +21,8 @@ div img {
     justify-content: center;
 }
 
-hr {
-    width: 800px;
+.centered-hr-container hr {
+    width: 1300px;
 }
 
 .home-btn button {

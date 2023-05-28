@@ -1,17 +1,22 @@
 import { useEffect, useState } from "react"
-import catService from "../../services/services"
-import ButtonGroup from '../../components/ButtonGroup/ButtonGroup'
+import { useLocation } from "react-router-dom"
+import catService from "../../services/cat-services"
+import dogService from "../../services/dog-services"
+import Gallery from "../../components/Gallery/Gallery"
 import './GalleryPage.css'
-import { Container } from "react-bootstrap"
 
 
 const GalleryPage = () => {
 
     const [cat, setCat] = useState()
+    const [dog, setDog] = useState()
+
+    const { pathname } = useLocation()
 
     useEffect(() => {
-        loadCat()
-    }, [])
+        pathname === '/cats' ? loadCat() : loadDog()
+    }, [pathname])
+
 
     const loadCat = () => {
         catService
@@ -31,37 +36,35 @@ const GalleryPage = () => {
             .catch(err => console.log(err))
     }
 
+    const loadDog = () => {
+        dogService
+            .getRandomDog()
+            .then(({ data }) => {
+                setDog(data)
+            })
+            .catch(err => console.log(err))
+    }
+
+    const loadThreeDogs = () => {
+        dogService
+            .getThreeDogs()
+            .then(({ data }) => {
+                setDog(data.message)
+            })
+            .catch(err => console.log(err))
+    }
+
 
     return (
-        <Container>
 
-            <article className="cat-gallery">
+        pathname === '/cats' ?
 
-                <h2>GALLERY</h2>
+            <Gallery title={`CAT'S`} data={cat} functionOne={loadCat} functionMultiple={loadTenCats} />
 
-                <div class='centered-hr-gallery'>
-                    <hr />
-                </div>
+            :
 
-                {!cat ? <p>Loading...</p> :
+            <Gallery title={`DOG'S`} data={dog} functionOne={loadDog} functionMultiple={loadThreeDogs} />
 
-                    !cat.length ?
-
-                        <img src={cat.url} alt="random cat" />
-
-                        :
-
-                        cat.map((elm, i) => {
-                            return < img key={i} src={elm.url} alt="random cat" />
-                        })
-
-                }
-
-            </article>
-
-            <ButtonGroup loadCat={loadCat} loadTenCats={loadTenCats} />
-
-        </Container>
     )
 }
 

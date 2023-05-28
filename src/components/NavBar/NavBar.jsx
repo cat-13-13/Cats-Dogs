@@ -1,24 +1,23 @@
-import './NavBar.css'
-import { Container, Navbar, Nav } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Container, Navbar } from 'react-bootstrap'
+import NavLink from '../NavLink/NavLink'
 
 
 const NavBar = () => {
 
     return (
+
         <Navbar bg="dark" variant="dark" expand="lg" className='mb-4'>
+
             <Container className='justify-content-start'>
 
-                <Link to="/" className='text-decoration-none custom-link'>
-                    <Nav.Link as='span' href='/'>Home</Nav.Link>
-                </Link>
-
-                <Link to="/gallery" className='text-decoration-none custom-link'>
-                    <Nav.Link as='span' href='/gallery'>Gallery</Nav.Link>
-                </Link>
+                <NavLink path={'/'} text={'Home'} />
+                <NavLink path={'/cats'} text={'Cats'} />
+                <NavLink path={'/dogs'} text={'Dogs'} />
 
             </Container>
+
         </Navbar>
+
     )
 }
 

@@ -1,26 +1,41 @@
 import './HomePage.css'
-import { Button, Container } from "react-bootstrap"
+import { Button, Container, Col, Row } from "react-bootstrap"
 import { Link } from "react-router-dom"
 
 
 const HomePage = () => {
 
     return (
+
         <Container>
 
-            {/* <h1>THIS IS A CATS WEB</h1> */}
             <h1>CATS <span>&</span> DOGS</h1>
 
-
-            <div class='centered-hr-container'>
+            <div className='centered-hr-container'>
                 <hr />
             </div>
 
-            <img src="https://i.pinimg.com/736x/30/62/75/3062756a297f1e3c22e35f3fe89b3ecc.jpg" alt="cat with computer" />
+            <Row className='d-flex justify-content-center'>
 
-            <Link to='/gallery' className="d-block home-btn">
-                <Button variant="dark">Do you want to see our cats?</Button>
-            </Link>
+                <Col>
+                    <img src="https://cats.com/wp-content/uploads/2022/09/cute-kitten-sit-on-laptop-compressed.jpg"
+                        alt="cat with computer" />
+
+                    <Link to='/cats' className="d-block home-btn">
+                        <Button variant="dark">Do you want to see cats?</Button>
+                    </Link>
+                </Col>
+
+                <Col>
+                    <img src="https://img.freepik.com/premium-photo/dog-using-computer-nerd-glasses-laptop-keyboard_67473-1841.jpg?w=2000"
+                        alt="dog with computer" />
+
+                    <Link to='/dogs' className="d-block home-btn">
+                        <Button variant="dark">Or do you prefer dogs?</Button>
+                    </Link>
+                </Col >
+
+            </Row>
 
         </Container>
     )
