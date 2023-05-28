@@ -1,17 +1,16 @@
-import { Link } from "react-router-dom"
+import './ButtonGroup.css'
+import { Button } from "react-bootstrap"
 
 
 const ButtonGroup = ({ loadCat, loadTenCats }) => {
 
     return (
 
-        <div className="btn-group">
+        <div className="btn-container">
 
-            <Link className="btn"> <button onClick={loadCat} >I WANT TO SEE ANOTHER ONE!</button></Link>
+            <Button variant="dark" onClick={loadCat}>I WANT TO SEE ANOTHER ONE!</Button>
 
-            <Link className="btn"> <button onClick={loadTenCats} >OKAY, I NEED TO SEE 10 OF THEM</button></Link>
-
-            <Link to='/' className="btn">GO BACK TO HOME PAGE</Link>
+            <Button variant="dark" onClick={loadTenCats}>OKAY, I NEED TO SEE 10 OF THEM</Button>
 
         </div>
     )

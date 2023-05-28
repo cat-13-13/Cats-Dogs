@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import catService from "../../services/services"
 import ButtonGroup from '../../components/ButtonGroup/ButtonGroup'
 import './GalleryPage.css'
+import { Container } from "react-bootstrap"
+
 
 const GalleryPage = () => {
 
@@ -31,10 +33,15 @@ const GalleryPage = () => {
 
 
     return (
-        <>
+        <Container>
+
             <article className="cat-gallery">
 
                 <h2>GALLERY</h2>
+
+                <div class='centered-hr-gallery'>
+                    <hr />
+                </div>
 
                 {!cat ? <p>Loading...</p> :
 
@@ -52,12 +59,9 @@ const GalleryPage = () => {
 
             </article>
 
-            <hr />
-
             <ButtonGroup loadCat={loadCat} loadTenCats={loadTenCats} />
 
-
-        </>
+        </Container>
     )
 }
 

@@ -1,3 +1,9 @@
+div h2 {
+    font-weight: 200;
+    font-size: 50px;
+    margin: 0;
+}
+
 .cat-gallery img {
     height: 300px;
     width: auto;
@@ -5,10 +11,11 @@
 
 }
 
-.btn-group {
+.centered-hr-gallery {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-content: center;
+    justify-content: center;
+}
 
+.centered-hr-gallery hr {
+    width: 900px;
 }
