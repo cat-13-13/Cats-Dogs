@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Cats-Dogs/static/css/main.9a4860c1.css",
+    "main.js": "/Cats-Dogs/static/js/main.cbff94fd.js",
+    "index.html": "/Cats-Dogs/index.html",
+    "main.9a4860c1.css.map": "/Cats-Dogs/static/css/main.9a4860c1.css.map",
+    "main.cbff94fd.js.map": "/Cats-Dogs/static/js/main.cbff94fd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9a4860c1.css",
+    "static/js/main.cbff94fd.js"
+  ]
+}
